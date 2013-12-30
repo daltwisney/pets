@@ -1,0 +1,12 @@
+{
+  "name"         : "pets",
+  "version"      : "0.0.",
+  "description"  : "Simple pets API. do persistence",
+  "private"	 : "true",
+  "main"         : "pets.js",
+  "author"       : "djh",
+  "dependencies" : {
+    "express"    : "~3.4.4",
+    "mongoose"   : "~3.6.2"
+  }
+}
