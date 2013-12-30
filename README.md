@@ -1,4 +1,4 @@
 pets
 ====
 
-Little node project for my dog and cats
+Little node project (API) for my dog and cats. need some persistence.  mongodb? redis? 
