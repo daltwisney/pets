@@ -1,0 +1,9 @@
+
+exports.animals = [
+					{	pet: "rocky", name: "Rocky the Wonder Beagle", animal: "dog"},
+					{	pet: "bailey", name: "Bailey aka Bailey Bean aka Chunky Butt", animal: "cat"},
+					{	pet: "little girl", name: "The Little Girl aka Tigerlilly", animal: "cat"},
+					{	pet: "annie", name: "The Big Doodle", animal: "dog"}
+];
+
+		

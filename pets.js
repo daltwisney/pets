@@ -1,16 +1,31 @@
-var express = require("express");
+
+var express = require("express"),
+	mongoose = require("mongoose"),
+	jade = require("jade"),
+	fs = require("fs"),
+	file = __dirname + "/public/models/pets";
+
 var app = express();
 
-var pets = [
-	    {	pet: "rocky", name: "Rocky the Wonder Beagle", animal: "dog"},
-	    {	pet: "bailey", name: "Bailey aka Bailey Bean aka Chunky Butt", animal: "cat"},
-	    {	pet: "little girl", name: "The Little Girl aka Tigerlilly", animal: "cat"} 
-];
+var pets = require(file).animals;
+console.log("debug: " + pets);
+
+// var pets = [
+// 	    {	pet: "rocky", name: "Rocky the Wonder Beagle", animal: "dog"},
+// 	    {	pet: "bailey", name: "Bailey aka Bailey Bean aka Chunky Butt", animal: "cat"},
+// 	    {	pet: "little girl", name: "The Little Girl aka Tigerlilly", animal: "cat"} ,
+// 	     {	pet: "annie", name: "The Big Doodle", animal: "dog"}
+// ];
 
 app.use(express.bodyParser());
 
 //  get
 app.get("/", function(req, res){
+	res.json(pets);
+});
+
+// get
+app.get("/pets", function(req, res){
 	res.json(pets);
 });
 
@@ -27,7 +42,7 @@ app.get("/pets/:id", function(req, res){
 
 // delete
 app.delete("/pets/:id", function(req, res){
-	if (pets.length <= req.params.id){
+	if ( pets.length <= req.params.id){
 		res.statusCode = 404;
 		return res.send("Error 404: No such four footer found");
 	}
