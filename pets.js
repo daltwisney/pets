@@ -24,7 +24,7 @@ app.get("/", function(req, res){
 	res.json(pets);
 });
 
-// get
+// get  
 app.get("/pets", function(req, res){
 	res.json(pets);
 });
